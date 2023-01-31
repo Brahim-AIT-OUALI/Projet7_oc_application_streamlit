@@ -46,8 +46,6 @@ if __name__=="__main__":
     
 
 
-    input_df=identifiant_client().iloc[0,0]
-
     # Variables sélectionnées
     df_vars_selected = pd.read_csv('df_vars_selected_saved.csv')
     vars_selected = df_vars_selected['feature'].to_list()
@@ -55,7 +53,10 @@ if __name__=="__main__":
     vars_selected.insert(0, 'SK_ID_CURR') # Ajout de l'identifiant aux features 
     st.subheader('1. Les données du client')
 
-    donnees_client = X[vars_selected][X[vars_selected]['SK_ID_CURR']==input_df] # ligne du dataset qui concerne le client
+    
+    input_df=identifiant_client().iloc[0,0]
+    X = X[vars_selected]    
+    donnees_client = X[X['SK_ID_CURR']==input_df] # ligne du dataset qui concerne le client
     st.write(donnees_client)
     
 
@@ -77,8 +78,7 @@ if __name__=="__main__":
     #prevision = sendrequest_to_fastapi
 
 
-
-  
+ 
     # data to be sent to api
 
     data ={
@@ -98,12 +98,12 @@ if __name__=="__main__":
     # extracting response text
     # Appliquer le modèle sur le profil d'entrée
 
-    prevision = pipeline.predict_proba(donnees_client.drop(['SK_ID_CURR'],axis=1))
+    #prevision = pipeline.predict_proba(donnees_client.drop(['SK_ID_CURR'],axis=1))
     st.subheader("2. Résultat de la prévision")
-    st.write(prevision[:,1][0])
+    st.write(prevision)
     S=0.38
 
-    if prevision [:,1][0]> S:
+    if prevision > S:
         st.write("Crédit refusé")
     else:
         st.write("crédit accordé")
