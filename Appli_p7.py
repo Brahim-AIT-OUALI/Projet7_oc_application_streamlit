@@ -42,9 +42,8 @@ if __name__=="__main__":
 
 
 
-    X = pd.read_csv('X_saved.csv')
+    X = pd.read_csv('X_test_init_sample_saved.csv')
     
-    y = pd.read_csv('y_saved.csv')
 
 
     input_df=identifiant_client().iloc[0,0]
@@ -99,12 +98,12 @@ if __name__=="__main__":
     # extracting response text
     # Appliquer le modèle sur le profil d'entrée
 
-    prevision = pipeline.predict(donnees_client.drop(['SK_ID_CURR'],axis=1))
+    prevision = pipeline.predict_proba(donnees_client.drop(['SK_ID_CURR'],axis=1))
     st.subheader("2. Résultat de la prévision")
-    st.write(prevision[0])
-    
+    st.write(prevision[:,1][0])
+    S=0.38
 
-    if prevision == 0:
+    if prevision > S:
         st.write("Crédit refusé")
     else:
         st.write("crédit accordé")
