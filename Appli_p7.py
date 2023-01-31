@@ -103,7 +103,7 @@ if __name__=="__main__":
     st.write(prevision[:,1][0])
     S=0.38
 
-    if prevision > S:
+    if prevision [:,1][0]> S:
         st.write("Crédit refusé")
     else:
         st.write("crédit accordé")
