@@ -98,7 +98,7 @@ if __name__=="__main__":
     # extracting response text
     # Appliquer le modèle sur le profil d'entrée
 
-    y_train_pred_proba = pipeline.predict_proba(donnees_client.drop(['SK_ID_CURR'],axis=1))
+    #y_train_pred_proba = pipeline.predict_proba(donnees_client.drop(['SK_ID_CURR'],axis=1))
     
     st.subheader("2. Interprétation de la prévision")
 
@@ -116,12 +116,13 @@ if __name__=="__main__":
     st.write (" * ###### Si P < S alors le client est négatif")
 
     st.subheader("3. Résultat pour ce client ")
-    st.write("P = ", y_train_pred_proba[:,1][0])
+    #st.write("P = ", y_train_pred_proba[:,1][0])
+    st.write("P = ", prevision)
     seuil = 0.3783783783783784
     
     
-
-    if y_train_pred_proba[:,1] > seuil:
+    #if y_train_pred_proba[:,1] > seuil:    
+    if prevision > seuil:
         st.write("###### Crédit refusé")
     else:
         st.write("###### crédit accordé")
