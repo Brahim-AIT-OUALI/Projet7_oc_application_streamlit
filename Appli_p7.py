@@ -84,7 +84,7 @@ if __name__=="__main__":
     data ={
        "SK_ID_CURR":input_df
     }
-
+    st.write(data)
     # sending post request and saving response as response object
     r = requests.post(url = API_ENDPOINT, data = data)
     #r = requests.post(url = API_ENDPOINT, data = json.dumps(data))
