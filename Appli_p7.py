@@ -84,9 +84,9 @@ if __name__=="__main__":
     data ={
        "SK_ID_CURR":input_df
     }
-    st.write(pd.DataFrame(data,index=[0]))
+    st.write(data)
     # sending post request and saving response as response object
-    r = requests.post(url = API_ENDPOINT, data = pd.DataFrame(data,index=[0]))
+    r = requests.post(url = API_ENDPOINT, data = data)
     #r = requests.post(url = API_ENDPOINT, data = json.dumps(data))
     prevision = r.text
     st.write(prevision)  
