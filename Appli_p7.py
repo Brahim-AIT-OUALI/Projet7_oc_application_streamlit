@@ -100,7 +100,7 @@ if __name__=="__main__":
 
     #prevision = pipeline.predict_proba(donnees_client.drop(['SK_ID_CURR'],axis=1))
     st.subheader("2. Résultat de la prévision")
-    st.write((prevision)[0][[0])
+    st.write((prevision)[0][0])
     S=0.38
 
     if prevision > S:
