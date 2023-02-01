@@ -71,7 +71,7 @@ if __name__=="__main__":
     # importing the requests library
     import requests
     #def sendrequest_to_fastapi():
-    API_ENDPOINT = "http://15.236.121.236/predict"
+    API_ENDPOINT = "http://15.236.121.236"
 
 
     # Envois de la requête à la Fastapi
