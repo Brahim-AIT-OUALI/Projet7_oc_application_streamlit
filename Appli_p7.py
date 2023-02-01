@@ -92,7 +92,7 @@ if __name__=="__main__":
     st.write(prevision)  
     prevision = json.loads(prevision)
     st.write(prevision)
-    prevision = prevision['detail'][0]
+    prevision = prevision['detail']
     st.write(prevision[0])
     st.write(type(prevision))
     # extracting response text
