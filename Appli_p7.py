@@ -98,29 +98,46 @@ if __name__=="__main__":
     # extracting response text
     # Appliquer le modèle sur le profil d'entrée
 
-    #prevision = pipeline.predict_proba(donnees_client.drop(['SK_ID_CURR'],axis=1))
-    st.subheader("2. Résultat de la prévision")
-    st.write((prevision)[0])
-    S=0.38
+    y_train_pred_proba = pipeline.predict_proba(donnees_client.drop(['SK_ID_CURR'],axis=1))
+    
+    st.subheader("2. Interprétation de la prévision")
 
-    if prevision > S:
-        st.write("Crédit refusé")
+    st.write("* #### Client positif = client en défaut ")
+    st.write("* #### Client négatif = bon client ")
+        
+    st.write("##### Les 2 types d'erreurs possibles minimisées par notre modèle: ")
+    st.write("           - FN = faux négatif (mauvais client prédit bon client : donc crédit accordé et perte en capital")
+    st.write("           - FP = faux positif (bon client prédit mauvais : donc refus crédit et manque à gagner en marge")
+
+    st.write("##### Un seuil S= 0.3783783783783784  a été calculé pour minimiser au maximum la perte en capital des FP :")
+        
+    st.write (" ##### P = probablité que le client soit positif")
+    st.write (" * ###### Si P > S alors le client est positif")
+    st.write (" * ###### Si P < S alors le client est négatif")
+
+    st.subheader("3. Résultat pour ce client ")
+    st.write("P = ", y_train_pred_proba[:,1][0])
+    seuil = 0.3783783783783784
+    
+    
+
+    if y_train_pred_proba[:,1] > seuil:
+        st.write("###### Crédit refusé")
     else:
-        st.write("crédit accordé")
+        st.write("###### crédit accordé")
 
 
     # Model Explainer
-    st.subheader("3. L'explication")
+    st.subheader("4. L'explication du résltat ")
     import lime
     import lime.lime_tabular
-
-   
-
-
+    
+    
+        
     predict_fn_rf = lambda x: pipeline.predict_proba(x).astype(float)
 
     explainer = lime.lime_tabular.LimeTabularExplainer((X[vars_selected].drop(['SK_ID_CURR'],axis=1)).values, 
-                                    feature_names = (X[vars_selected].drop(['SK_ID_CURR'],axis=1)).columns,class_names=['Refusé','Accordé'],kernel_width=5)
+                                    feature_names = (X[vars_selected].drop(['SK_ID_CURR'],axis=1)).columns,class_names=['Négatif', 'Positif'],kernel_width=5)
 
     choosen_instance = (donnees_client.drop(['SK_ID_CURR'],axis=1)).values[0]
     exp = explainer.explain_instance(choosen_instance, predict_fn_rf,num_features=15)
@@ -130,13 +147,21 @@ if __name__=="__main__":
     fig = plt.figure()
 
     label_limits = [i[0] for i in new_exp]
-    st.write(label_limits)
+    #st.write(label_limits)
     label_scores = [i[1] for i in new_exp]
-    st.write(label_scores)
+    #st.write(label_scores)
 
-    plt.barh(label_limits, label_scores)
+    #plt.barh(label_limits, label_scores)
       
-    st.pyplot(fig)
-    st.write(fig)
+    #st.pyplot(fig)
+    html = exp.as_html()
+    import streamlit.components.v1 as components
+    components.html(html, height=800)
+
+    with plt.style.context("ggplot"):
+                exp.as_pyplot_figure()
+        
+        
    
     
+
