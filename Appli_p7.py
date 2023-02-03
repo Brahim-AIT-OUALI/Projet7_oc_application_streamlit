@@ -33,7 +33,7 @@ def numeric(col):
 def relation_entre_variables (var1, var2):
     fig = plt.figure(figsize=(12,5))
     plt.title(var2 +" en fonction de " + var1)
-    sns.scatter(data=X, x=var1, y=var2)
+    sns.scater(data=X, x=var1, y=var2)
     st.pyplot(fig)
         
 
