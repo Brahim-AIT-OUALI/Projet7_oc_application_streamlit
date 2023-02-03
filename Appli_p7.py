@@ -83,7 +83,10 @@ if __name__=="__main__":
     st.write(donnees_client)
     
     numeric("ANNUITY_INCOME_PERC")
+    numeric("DAYS_EMPLOYED")
+        
     relation_entre_variables ("DAYS_BIRTH", "DAYS_EMPLOYED")
+
     # Importer le modèle
     from joblib import dump, load
     pipeline_loaded = load('pipeline_credit.joblib')
