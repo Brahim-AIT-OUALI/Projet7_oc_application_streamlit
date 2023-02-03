@@ -26,7 +26,12 @@ def numeric(col):
     plt.title("Distribution of "+col)
     ax = sns.distplot(X[col])
     st.pyplot(fig)
-
+def relation_entre_variables (var1, var2):
+    fig = plt.figure(figsize=(12,5))
+    plt.title("var1 en fonction de var2 "+col)
+    ax = sns.relplot(data=X, x=var1, y=var2)
+    st.pyplot(fig)
+        
 
 if __name__=="__main__":
     st.set_page_config(
@@ -67,7 +72,7 @@ if __name__=="__main__":
     st.write(donnees_client)
     
     numeric("ANNUITY_INCOME_PERC")
-
+    relation_entre_variables ("DAYS_BIRTH", "DAYS_EMPLOYED")
     # Importer le modèle
     from joblib import dump, load
     pipeline_loaded = load('pipeline_credit.joblib')
