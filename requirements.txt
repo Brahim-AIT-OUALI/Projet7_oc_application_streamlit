@@ -8,3 +8,4 @@ pandas_datareader
 lightgbm
 lime
 ipython
+seaborn
