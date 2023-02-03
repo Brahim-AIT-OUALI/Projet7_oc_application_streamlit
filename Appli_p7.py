@@ -67,8 +67,10 @@ if __name__=="__main__":
     vars_selected = df_vars_selected['feature'].to_list()
 
     def distribution():
-        VARIABLE =st.sidebar.selectbox('vars_selected',(X.vars_selected))
+        VARIABLE =st.sidebar.selectbox('vars_selected',(df_vars_selected.vars_selected))
         return numeric(vars_selected)
+       
+
 
     # Afficher les données du client:
     vars_selected.insert(0, 'SK_ID_CURR') # Ajout de l'identifiant aux features 
