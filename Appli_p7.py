@@ -29,7 +29,7 @@ def numeric(col):
         
 def relation_entre_variables (var1, var2):
     fig = plt.figure(figsize=(12,5))
-    plt.title(var1 +" en fonction de " + var2)
+    plt.title(var2 +" en fonction de " + var1)
     ax = sns.relplot(data=X, x=var1, y=var2)
     st.pyplot(fig)
         
@@ -86,7 +86,7 @@ if __name__=="__main__":
     import requests
     #def sendrequest_to_fastapi():
     #API_ENDPOINT = "http://15.236.121.236/predict"
-    API_ENDPOINT = "http://127.0.0.1:8000/predict"
+    API_ENDPOINT = "http://127.0.0.1:8000"
 
 
     # Envois de la requête à la Fastapi
