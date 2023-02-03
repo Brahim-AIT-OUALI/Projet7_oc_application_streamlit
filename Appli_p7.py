@@ -67,7 +67,7 @@ if __name__=="__main__":
     vars_selected = df_vars_selected['feature'].to_list()
 
     def distribution():
-        VARIABLE =st.sidebar.selectbox('vars_selected',(df_vars_selected.vars_selected))
+        VARIABLE =st.sidebar.selectbox('feature',(df_vars_selected.feature))
         return numeric(vars_selected)
        
 
