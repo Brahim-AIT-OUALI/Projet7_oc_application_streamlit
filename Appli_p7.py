@@ -22,9 +22,10 @@ def identifiant_client():
         return ID_client
 
 def numeric(col):
-    plt.figure(figsize=(12,5))
+    fig = plt.figure(figsize=(12,5))
     plt.title("Distribution of "+col)
-    ax = sns.distplot(X[col].dropna())
+    ax = sns.distplot(X[col])
+     st.pyplot(fig)
 
 
 if __name__=="__main__":
@@ -50,7 +51,7 @@ if __name__=="__main__":
 
     X = pd.read_csv('X_test_init_sample_saved.csv')
     
-    st.pyplot(numeric("ANNUITY_INCOME_PERC"))
+    numeric("ANNUITY_INCOME_PERC")
 
     # Variables sélectionnées
     df_vars_selected = pd.read_csv('df_vars_selected_saved.csv')
