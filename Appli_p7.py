@@ -51,7 +51,7 @@ if __name__=="__main__":
 
     X = pd.read_csv('X_test_init_sample_saved.csv')
     
-    numeric("ANNUITY_INCOME_PERC")
+    
 
     # Variables sélectionnées
     df_vars_selected = pd.read_csv('df_vars_selected_saved.csv')
@@ -66,6 +66,7 @@ if __name__=="__main__":
     donnees_client = X[X['SK_ID_CURR']==input_df] # ligne du dataset qui concerne le client
     st.write(donnees_client)
     
+    numeric("ANNUITY_INCOME_PERC")
 
     # Importer le modèle
     from joblib import dump, load
