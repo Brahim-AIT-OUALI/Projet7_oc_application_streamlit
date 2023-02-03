@@ -24,7 +24,7 @@ def identifiant_client():
 def numeric(col):
     plt.figure(figsize=(12,5))
     plt.title("Distribution of "+col)
-    ax = sns.distplot(application[col].dropna())
+    ax = sns.distplot(X[col].dropna())
 
 
 if __name__=="__main__":
