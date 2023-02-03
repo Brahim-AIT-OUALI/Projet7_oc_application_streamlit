@@ -50,7 +50,7 @@ if __name__=="__main__":
 
     X = pd.read_csv('X_test_init_sample_saved.csv')
     
-    st.write(numeric("ANNUITY_INCOME_PERC"))
+    st.pyplot(numeric("ANNUITY_INCOME_PERC"))
 
     # Variables sélectionnées
     df_vars_selected = pd.read_csv('df_vars_selected_saved.csv')
