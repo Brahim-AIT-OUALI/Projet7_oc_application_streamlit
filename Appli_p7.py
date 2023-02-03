@@ -25,7 +25,7 @@ def numeric(col):
     fig = plt.figure(figsize=(12,5))
     plt.title("Distribution of "+col)
     ax = sns.distplot(X[col])
-     st.pyplot(fig)
+    st.pyplot(fig)
 
 
 if __name__=="__main__":
