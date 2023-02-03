@@ -20,6 +20,11 @@ def identifiant_client():
         ID_client = pd.DataFrame(data,index=[0])
         return ID_client
 
+def numeric(col):
+    plt.figure(figsize=(12,5))
+    plt.title("Distribution of "+col)
+    ax = sns.distplot(application[col].dropna())
+
 
 if __name__=="__main__":
     st.set_page_config(
@@ -44,7 +49,7 @@ if __name__=="__main__":
 
     X = pd.read_csv('X_test_init_sample_saved.csv')
     
-
+    st.write(numeric("ANNUITY_INCOME_PERC"))
 
     # Variables sélectionnées
     df_vars_selected = pd.read_csv('df_vars_selected_saved.csv')
