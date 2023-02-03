@@ -21,6 +21,11 @@ def identifiant_client():
         ID_client = pd.DataFrame(data,index=[0])
         return ID_client
 
+def distribution():
+        VARIABLE =st.sidebar.selectbox('vars_selected',(X.vars_selected))
+        return numeric(vars_selected)
+
+
 def numeric(col):
     fig = plt.figure(figsize=(12,5))
     plt.title("Distribution of "+col)
