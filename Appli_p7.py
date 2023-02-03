@@ -21,9 +21,7 @@ def identifiant_client():
         ID_client = pd.DataFrame(data,index=[0])
         return ID_client
 
-def distribution():
-        VARIABLE =st.sidebar.selectbox('vars_selected',(X.vars_selected))
-        return numeric(vars_selected)
+
 
 
 def numeric(col):
@@ -67,6 +65,11 @@ if __name__=="__main__":
     # Variables sélectionnées
     df_vars_selected = pd.read_csv('df_vars_selected_saved.csv')
     vars_selected = df_vars_selected['feature'].to_list()
+
+    def distribution():
+        VARIABLE =st.sidebar.selectbox('vars_selected',(X.vars_selected))
+        return numeric(vars_selected)
+
     # Afficher les données du client:
     vars_selected.insert(0, 'SK_ID_CURR') # Ajout de l'identifiant aux features 
     st.subheader('1. Les données du client')
