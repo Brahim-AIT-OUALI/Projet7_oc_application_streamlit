@@ -66,13 +66,8 @@ if __name__=="__main__":
     df_vars_selected = pd.read_csv('df_vars_selected_saved.csv')
     vars_selected = df_vars_selected['feature'].to_list()
 
-    def distribution():
-        VARIABLE =st.sidebar.selectbox('feature',(df_vars_selected.feature))
-        return numeric(vars_selected)
-       
-
-
-    # Afficher les données du client:
+      
+   # Afficher les données du client:
     vars_selected.insert(0, 'SK_ID_CURR') # Ajout de l'identifiant aux features 
     st.subheader('1. Les données du client')
 
@@ -85,7 +80,7 @@ if __name__=="__main__":
     numeric("ANNUITY_INCOME_PERC")
     st.write(donnees_client["ANNUITY_INCOME_PERC"])
     numeric("DAYS_EMPLOYED")
-    st.write("Valeur pour le client = "donnees_client["DAYS_EMPLOYED"])
+    st.write("Valeur pour le client = ", donnees_client["DAYS_EMPLOYED"])
         
     relation_entre_variables ("DAYS_BIRTH", "DAYS_EMPLOYED")
 
