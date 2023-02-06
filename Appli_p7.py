@@ -25,14 +25,14 @@ def identifiant_client():
 
 
 def numeric(col):
-    fig = plt.figure(figsize=(20,5))
+    fig = plt.figure(figsize=(15,5))
     plt.title("Distribution of " +col)
     ax = sns.distplot(X[col])
     plt.axline((donnees_client[col].iloc[0], 0), (donnees_client[col].iloc[0], 1), c='darkorange', ls='dashed')
     st.pyplot(fig)
         
 def relation_entre_variables (var1, var2):
-    fig = plt.figure(figsize=(12,5))
+    fig = plt.figure(figsize=(15,5))
     plt.title(var2 +" en fonction de " + var1)
     sns.scatterplot(data=X, x=var1, y=var2)
     st.pyplot(fig)
