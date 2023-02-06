@@ -84,7 +84,7 @@ if __name__=="__main__":
 
     numeric("DAYS_EMPLOYED")
     st.write("Valeur pour le client = ", donnees_client["DAYS_EMPLOYED"].iloc[0])
-    st.writemax(X[col].tolist()))
+    st.write(max(X[col].tolist()))
         
     relation_entre_variables ("DAYS_BIRTH", "DAYS_EMPLOYED")
 
