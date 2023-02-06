@@ -28,8 +28,6 @@ def numeric(col):
     fig = plt.figure(figsize=(12,5))
     plt.title("Distribution of "+col)
     ax = sns.distplot(X[col])
-    X1 = X[[col, 'SK_ID_CURR']]
-    sns.distplot((X1[X1['SK_ID_CURR']==input_df].iloc[0,0]), (X1[X1['SK_ID_CURR']==input_df].iloc[0,0]), c='darkorange', ls='dashed')
     st.pyplot(fig)
         
 def relation_entre_variables (var1, var2):
