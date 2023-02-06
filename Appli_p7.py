@@ -81,8 +81,10 @@ if __name__=="__main__":
     numeric("ANNUITY_INCOME_PERC")
     st.write("Valeur pour le client = ", donnees_client["ANNUITY_INCOME_PERC"].iloc[0])
 
+
     numeric("DAYS_EMPLOYED")
     st.write("Valeur pour le client = ", donnees_client["DAYS_EMPLOYED"].iloc[0])
+    st.writemax(X[col].tolist()))
         
     relation_entre_variables ("DAYS_BIRTH", "DAYS_EMPLOYED")
 
