@@ -98,8 +98,8 @@ if __name__=="__main__":
     # importing the requests library
     import requests
     #def sendrequest_to_fastapi():
-    API_ENDPOINT = "http://http://52.47.162.65/docs"
-    #API_ENDPOINT = "http://127.0.0.1:8000/docs"
+    API_ENDPOINT = "http://http://52.47.162.65"
+
 
 
     # Envois de la requête à la Fastapi
