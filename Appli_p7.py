@@ -25,7 +25,7 @@ def identifiant_client():
 
 
 def numeric(col):
-    fig = plt.figure(figsize=(12,5))
+    fig = plt.figure(figsize=(20,5))
     plt.title("Distribution of " +col)
     ax = sns.distplot(X[col])
     plt.axline((donnees_client[col].iloc[0], 0), (donnees_client[col].iloc[0], 1), c='darkorange', ls='dashed')
