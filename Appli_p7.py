@@ -84,7 +84,7 @@ if __name__=="__main__":
 
     numeric("DAYS_EMPLOYED")
     st.write("Valeur pour le client = ", donnees_client["DAYS_EMPLOYED"].iloc[0])
-    st.write(max(X[col].tolist()))
+    st.write(max(X["DAYS_EMPLOYED"].tolist()))
         
     relation_entre_variables ("DAYS_BIRTH", "DAYS_EMPLOYED")
 
@@ -104,7 +104,7 @@ if __name__=="__main__":
 
 
     # Envois de la requête à la Fastapi
-    #prevision = sendrequest_to_fastapi
+    # prevision = sendrequest_to_fastapi
 
 
  
