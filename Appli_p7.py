@@ -28,7 +28,7 @@ def numeric(col):
     fig = plt.figure(figsize=(15,5))
     plt.title("Distribution of " +col)
     ax = sns.distplot(X[col])
-    plt.axline((donnees_client[col].iloc[0], 0), (donnees_client[col].iloc[0], 0.05), c='darkorange', ls='dashed')
+    plt.axline((donnees_client[col].iloc[0], 0), (donnees_client[col].iloc[0], 0.005), c='darkorange', ls='dashed')
     st.pyplot(fig)
         
 def relation_entre_variables (var1, var2):
