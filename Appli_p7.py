@@ -28,6 +28,7 @@ def numeric(col):
     fig = plt.figure(figsize=(12,5))
     plt.title("Distribution of "+col)
     ax = sns.distplot(X[col])
+    ax = sns.distplot(donnees_client[col])
     st.pyplot(fig)
         
 def relation_entre_variables (var1, var2):
