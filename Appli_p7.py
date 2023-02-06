@@ -78,9 +78,9 @@ if __name__=="__main__":
     st.write(donnees_client)
     
     numeric("ANNUITY_INCOME_PERC")
-    st.write(donnees_client["ANNUITY_INCOME_PERC"])
+    st.write(donnees_client["ANNUITY_INCOME_PERC"].iloc[0,0])
     numeric("DAYS_EMPLOYED")
-    st.write("Valeur pour le client = ", donnees_client["DAYS_EMPLOYED"])
+    st.write("Valeur pour le client = ", donnees_client["DAYS_EMPLOYED"].iloc[0,0])
         
     relation_entre_variables ("DAYS_BIRTH", "DAYS_EMPLOYED")
 
