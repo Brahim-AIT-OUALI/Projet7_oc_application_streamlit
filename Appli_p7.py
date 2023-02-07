@@ -109,7 +109,7 @@ if __name__=="__main__":
  
     # data to be sent to api
 
-    data ={"SK_ID_CURR":input_df}
+    data ={"SK_ID_CURR": float(input_df)}
         
     st.write(data)
     # sending post request and saving response as response object
