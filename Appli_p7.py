@@ -114,7 +114,7 @@ if __name__=="__main__":
     }
     st.write(data)
     # sending post request and saving response as response object
-    r = requests.post(url = API_ENDPOINT, data = data["SK_ID_CURR"])
+    r = requests.post(url = API_ENDPOINT, data = input_df)
     #r = requests.post(url = API_ENDPOINT, data = json.dumps(data))
     prevision = r.text
     st.write(prevision)  
