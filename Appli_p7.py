@@ -119,7 +119,7 @@ if __name__=="__main__":
     prevision = json.loads(prevision)
     st.write(prevision)
     #prevision = prevision['detail']
-    st.write(prevision[0])
+    #st.write(prevision[0])
     st.write(type(prevision))
     # extracting response text
     # Appliquer le modèle sur le profil d'entrée
