@@ -117,7 +117,7 @@ if __name__=="__main__":
     prevision = r.text
     st.write(prevision)  
     prevision = json.loads(prevision)
-    st.write(prevision)
+    st.write(prevision["reponse"])
     #prevision = prevision['detail']
     #st.write(prevision[0])
     st.write(type(prevision))
