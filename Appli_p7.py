@@ -114,6 +114,7 @@ if __name__=="__main__":
     st.write(data)
     # sending post request and saving response as response object
     r = requests.post(url = API_ENDPOINT, data = data)
+     st.write(print(r.json()))
     #r = requests.post(url = API_ENDPOINT, data = json.dumps(data))
     prevision = r.text
     st.write(prevision)  
@@ -143,7 +144,7 @@ if __name__=="__main__":
     st.write (" * ###### Si P < S alors le client est négatif")
 
     st.subheader("3. Résultat pour ce client ")
-    st.write(print(prevision.json()))
+   
     st.write("P = ", prevision)
     seuil = 0.3783783783783784
     
