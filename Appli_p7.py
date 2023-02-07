@@ -113,9 +113,8 @@ if __name__=="__main__":
         
     st.write(data)
     # sending post request and saving response as response object
-    #r = requests.post(url = API_ENDPOINT, data = data)
+    r = requests.post(url = API_ENDPOINT, data = data)
     st.write(print(r.json()))
-    r = requests.post(url = API_ENDPOINT, data = json.dumps(data))
     prevision = r.text
     st.write(prevision)  
     prevision = json.loads(prevision)
