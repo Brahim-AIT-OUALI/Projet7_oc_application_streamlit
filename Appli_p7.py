@@ -148,7 +148,7 @@ if __name__=="__main__":
     
     
     #if y_train_pred_proba[:,1] > seuil:    
-    if prevision > seuil:
+    if prevision["reponse"] > seuil:
         st.write("###### Crédit refusé")
     else:
         st.write("###### crédit accordé")
