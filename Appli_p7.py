@@ -143,7 +143,7 @@ if __name__=="__main__":
 
     st.subheader("3. Résultat pour ce client ")
    
-    st.write("P = ", prevision)
+    st.write("P = ", prevision["reponse"])
     seuil = 0.3783783783783784
     
     
