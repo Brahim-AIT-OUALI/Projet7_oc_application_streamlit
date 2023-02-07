@@ -115,7 +115,7 @@ if __name__=="__main__":
     # sending post request and saving response as response object
     r = requests.post(url = API_ENDPOINT, json = data)
     prevision = r.text
-    st.write(prevision)  
+    st.write(prevision.value)  
     prevision = json.loads(prevision)
     st.write(prevision)
     #prevision = prevision['detail']
