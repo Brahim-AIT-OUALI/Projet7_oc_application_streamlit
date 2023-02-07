@@ -98,7 +98,7 @@ if __name__=="__main__":
     # importing the requests library
     import requests
     #def sendrequest_to_fastapi():
-    API_ENDPOINT = "http://52.47.162.65/predict"
+    API_ENDPOINT = "http://13.37.154.218/predict"
 
 
 
