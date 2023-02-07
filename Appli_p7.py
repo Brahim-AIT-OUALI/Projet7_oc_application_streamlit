@@ -143,7 +143,7 @@ if __name__=="__main__":
     st.write (" * ###### Si P < S alors le client est négatif")
 
     st.subheader("3. Résultat pour ce client ")
-    #st.write("P = ", y_train_pred_proba[:,1][0])
+    st.write(print(prevision.json()))
     st.write("P = ", prevision)
     seuil = 0.3783783783783784
     
