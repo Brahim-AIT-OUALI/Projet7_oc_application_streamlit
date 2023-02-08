@@ -202,7 +202,7 @@ if __name__=="__main__":
         
     
     st.write (" * En orange les facteurs *défavorables à l'octroi du crédit")
-    st.write (" *En bleu les facteurs *favorables à l'octroi du crédit")
+    st.write (" * En bleu les facteurs *favorables à l'octroi du crédit")
    
     
 
