@@ -85,8 +85,8 @@ if __name__=="__main__":
 
     st.write("Distribution de ", option)
     numeric(option)
-    numeric("ANNUITY_INCOME_PERC")
-    st.write("Valeur pour le client = ", donnees_client["ANNUITY_INCOME_PERC"].iloc[0])
+  
+    st.write("Valeur pour le client = ", donnees_client[option].iloc[0])
 
 
     numeric("DAYS_EMPLOYED")
