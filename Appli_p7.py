@@ -81,7 +81,7 @@ if __name__=="__main__":
     
 
     option = st.selectbox(
-     'Choisissez la variable dont vous voulez représenter la distribution', (vars_selected[1:]))
+     '# Choisissez la variable dont vous voulez représenter la distribution', (vars_selected[1:]))
 
     st.write('You selected:', option)
     numeric(option)
