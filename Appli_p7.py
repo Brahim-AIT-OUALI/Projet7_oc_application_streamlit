@@ -86,7 +86,7 @@ if __name__=="__main__":
     donnees_client = X[X['SK_ID_CURR']==input_df] # ligne du dataset qui concerne le client
     st.write(donnees_client)
 
-    choix_var = explo_var().iloc[0,0]
+    choix_var = explo_var()
     
     
     numeric("ANNUITY_INCOME_PERC")
