@@ -22,6 +22,13 @@ def identifiant_client():
         return ID_client
 
 
+def explo_var():
+        var = st.sidebar.selectbox('var',(X.var))
+
+        data={' var ': var }
+    
+        variable = pd.DataFrame(data,index=[0])
+        return ID_client
 
 
 def numeric(col):
@@ -74,9 +81,13 @@ if __name__=="__main__":
 
     
     input_df=identifiant_client().iloc[0,0]
+    
     X = X[vars_selected]    
     donnees_client = X[X['SK_ID_CURR']==input_df] # ligne du dataset qui concerne le client
     st.write(donnees_client)
+
+    choix_var = explo_var().iloc[0,0]
+    
     
     numeric("ANNUITY_INCOME_PERC")
     st.write("Valeur pour le client = ", donnees_client["ANNUITY_INCOME_PERC"].iloc[0])
