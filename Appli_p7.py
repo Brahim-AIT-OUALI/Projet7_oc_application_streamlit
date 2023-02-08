@@ -81,14 +81,15 @@ if __name__=="__main__":
     
 
     option = st.selectbox(
-     'Choisissez la variable dont vous voulez représenter la distribution', (vars_selected[1:]))
+     * 'Choisissez la variable dont vous voulez représenter la distribution', (vars_selected[1:]))
 
     st.write("Distribution de ", option)
     numeric(option)
   
     st.write("Valeur pour le client sélectionné = ", donnees_client[option].iloc[0])
 
-
+    st.write("____________________________________________________________________________________________")
+    st.write( 
     
             
     relation_entre_variables ("DAYS_BIRTH", "DAYS_EMPLOYED")
