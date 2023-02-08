@@ -80,7 +80,7 @@ if __name__=="__main__":
     st.write(donnees_client)
     
 
-    st.header("2. Distribution des variables")
+    st.subheader("2. Distribution des variables")
     option = st.selectbox(
       'Choisissez la variable dont vous voulez représenter la distribution', (vars_selected[1:]))
 
@@ -90,7 +90,7 @@ if __name__=="__main__":
     st.write("Valeur pour le client sélectionné = ", donnees_client[option].iloc[0])
 
     st.write("-------------------------------------------------------------------------------------------")
-    st.header("3. Relation entre les variables")
+    st.subheader("3. Relation entre les variables")
     option1 = st.selectbox(
       'Choisissez la variable en abscisses', (vars_selected[1:]))
     st.write("________________________________________")
@@ -138,7 +138,7 @@ if __name__=="__main__":
 
     #y_train_pred_proba = pipeline.predict_proba(donnees_client.drop(['SK_ID_CURR'],axis=1))
     
-    st.subheader("2. Interprétation de la prévision")
+    st.subheader("4. Interprétation de la prévision")
 
     st.write("* #### Client positif = client en défaut ")
     st.write("* #### Client négatif = bon client ")
@@ -153,7 +153,7 @@ if __name__=="__main__":
     st.write (" * ###### Si P > S alors le client est positif")
     st.write (" * ###### Si P < S alors le client est négatif")
 
-    st.subheader("3. Résultat pour ce client ")
+    st.subheader("5. Résultat pour ce client ")
    
     st.write("P = ", prevision["reponse"])
     seuil = 0.3783783783783784
@@ -167,7 +167,7 @@ if __name__=="__main__":
 
 
     # Model Explainer
-    st.subheader("4. L'explication du résltat ")
+    st.subheader("6. L'explication du résltat ")
     import lime
     import lime.lime_tabular
     
@@ -200,7 +200,9 @@ if __name__=="__main__":
     with plt.style.context("ggplot"):
                 exp.as_pyplot_figure()
         
-        
+    
+    st.write (" * En orange les facteurs *défavorables à l'octroi du crédit")
+    st.write (" *En bleu les facteurs *favorables à l'octroi du crédit")
    
     
 
