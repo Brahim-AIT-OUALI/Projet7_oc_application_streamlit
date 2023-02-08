@@ -78,6 +78,13 @@ if __name__=="__main__":
     donnees_client = X[X['SK_ID_CURR']==input_df] # ligne du dataset qui concerne le client
     st.write(donnees_client)
     
+
+    option = st.selectbox(
+     'quelle variable?',
+     (vars_selected)
+
+    st.write('You selected:', option)
+
     numeric("ANNUITY_INCOME_PERC")
     st.write("Valeur pour le client = ", donnees_client["ANNUITY_INCOME_PERC"].iloc[0])
 
