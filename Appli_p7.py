@@ -92,10 +92,10 @@ if __name__=="__main__":
     st.write("-------------------------------------------------------------------------------------------")
     st.subheader("3. Relation entre les variables")
     option1 = st.selectbox(
-      'Choisissez la variable en abscisses', (vars_selected[1:]))
+      'Choisissez la variable en abscisse', (vars_selected[1:]))
     st.write("________________________________________")
     option2 = st.selectbox(
-      'Choisissez la variable en ordonnées', (vars_selected[1:]))
+      'Choisissez la variable en ordonnée', (vars_selected[1:]))
         
     relation_entre_variables (option1, option2)
 
@@ -109,15 +109,14 @@ if __name__=="__main__":
 
     # importing the requests library
     import requests
-    #def sendrequest_to_fastapi():
+  
+        
     API_ENDPOINT = "http://13.37.154.218/predict"
 
 
 
     # Envois de la requête à la Fastapi
-    # prevision = sendrequest_to_fastapi
-
-
+  
  
     # data to be sent to api
 
@@ -130,10 +129,10 @@ if __name__=="__main__":
     st.write(prevision)  
     prevision = json.loads(prevision)
     st.write(prevision["reponse"])
-    #prevision = prevision['detail']
-    #st.write(prevision[0])
+  
+    
     st.write(type(prevision))
-    # extracting response text
+    
     # Appliquer le modèle sur le profil d'entrée
 
     #y_train_pred_proba = pipeline.predict_proba(donnees_client.drop(['SK_ID_CURR'],axis=1))
