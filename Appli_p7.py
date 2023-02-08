@@ -22,14 +22,6 @@ def identifiant_client():
         return ID_client
 
 
-def explo_var():
-        var = st.sidebar.selectbox('var',(X.var))
-
-        data={' var ': var }
-    
-        variable = pd.DataFrame(data,index=[0])
-        return ID_client
-
 
 def numeric(col):
     fig = plt.figure(figsize=(15,5))
@@ -69,11 +61,6 @@ if __name__=="__main__":
     X = pd.read_csv('X_test_init_sample_saved.csv')
     
     
-
-    # Variables sélectionnées
-    df_vars_selected = pd.read_csv('df_vars_selected_saved.csv')
-    vars_selected = df_vars_selected['feature'].to_list()
-
       
    # Afficher les données du client:
     vars_selected.insert(0, 'SK_ID_CURR') # Ajout de l'identifiant aux features 
