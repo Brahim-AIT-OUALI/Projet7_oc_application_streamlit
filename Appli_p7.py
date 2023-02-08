@@ -81,7 +81,7 @@ if __name__=="__main__":
 
     option = st.selectbox(
      'quelle variable?',
-     (vars_selected)
+     (vars_selected))
 
     st.write('You selected:', option)
 
