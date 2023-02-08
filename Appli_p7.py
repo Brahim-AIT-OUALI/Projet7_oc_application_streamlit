@@ -84,7 +84,7 @@ if __name__=="__main__":
      (vars_selected))
 
     st.write('You selected:', option)
-
+    numeric(option)
     numeric("ANNUITY_INCOME_PERC")
     st.write("Valeur pour le client = ", donnees_client["ANNUITY_INCOME_PERC"].iloc[0])
 
