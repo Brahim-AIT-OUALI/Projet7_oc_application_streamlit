@@ -86,11 +86,10 @@ if __name__=="__main__":
     st.write("Distribution de ", option)
     numeric(option)
   
-    st.write("Valeur pour le client = ", donnees_client[option].iloc[0])
+    st.write("Valeur pour le client sélectionné = ", donnees_client[option].iloc[0])
 
 
-    numeric("DAYS_EMPLOYED")
-    st.write("Valeur pour le client = ", donnees_client["DAYS_EMPLOYED"].iloc[0])
+    
             
     relation_entre_variables ("DAYS_BIRTH", "DAYS_EMPLOYED")
 
