@@ -23,6 +23,7 @@ def identifiant_client():
 
 
 
+
 def numeric(col):
     fig = plt.figure(figsize=(15,5))
     plt.title("Distribution of " +col)
@@ -61,6 +62,11 @@ if __name__=="__main__":
     X = pd.read_csv('X_test_init_sample_saved.csv')
     
     
+
+    # Variables sélectionnées
+    df_vars_selected = pd.read_csv('df_vars_selected_saved.csv')
+    vars_selected = df_vars_selected['feature'].to_list()
+
       
    # Afficher les données du client:
     vars_selected.insert(0, 'SK_ID_CURR') # Ajout de l'identifiant aux features 
@@ -68,13 +74,9 @@ if __name__=="__main__":
 
     
     input_df=identifiant_client().iloc[0,0]
-    
     X = X[vars_selected]    
     donnees_client = X[X['SK_ID_CURR']==input_df] # ligne du dataset qui concerne le client
     st.write(donnees_client)
-
-    choix_var = explo_var()
-    
     
     numeric("ANNUITY_INCOME_PERC")
     st.write("Valeur pour le client = ", donnees_client["ANNUITY_INCOME_PERC"].iloc[0])
