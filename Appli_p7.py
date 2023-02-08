@@ -80,6 +80,7 @@ if __name__=="__main__":
     st.write(donnees_client)
     
 
+    st.header("Choisissez la variable dont vous voulez représenter la distribution")
     option = st.selectbox(
       '* Choisissez la variable dont vous voulez représenter la distribution', (vars_selected[1:]))
 
