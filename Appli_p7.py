@@ -94,7 +94,7 @@ if __name__=="__main__":
     option1 = st.selectbox(
       'Choisissez la variable en abscisses', (vars_selected[1:]))
     st.write("________________________________________")
-     option2 = st.selectbox(
+    option2 = st.selectbox(
       'Choisissez la variable en ordonnées', (vars_selected[1:]))
         
     relation_entre_variables (option1, option2)
