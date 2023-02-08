@@ -89,7 +89,7 @@ if __name__=="__main__":
     st.write("Valeur pour le client sélectionné = ", donnees_client[option].iloc[0])
 
     st.write("____________________________________________________________________________________________")
-    st.write( 
+   
     
             
     relation_entre_variables ("DAYS_BIRTH", "DAYS_EMPLOYED")
