@@ -122,21 +122,19 @@ if __name__=="__main__":
 
     data ={"SK_ID_CURR": float(input_df)}
         
-    st.write(data)
+    #st.write(data)
     # sending post request and saving response as response object
+        
     r = requests.post(url = API_ENDPOINT, json = data)
     prevision = r.text
-    st.write(prevision)  
+    #st.write(prevision)  
     prevision = json.loads(prevision)
-    st.write(prevision["reponse"])
-  
-    
-    st.write(type(prevision))
+        
+    #st.write(prevision["reponse"])
+    #st.write(type(prevision))
     
     # Appliquer le modèle sur le profil d'entrée
 
-    #y_train_pred_proba = pipeline.predict_proba(donnees_client.drop(['SK_ID_CURR'],axis=1))
-    
     st.subheader("4. Interprétation de la prévision")
 
     st.write("* #### Client positif = client en défaut ")
