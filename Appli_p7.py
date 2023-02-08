@@ -80,20 +80,24 @@ if __name__=="__main__":
     st.write(donnees_client)
     
 
-    st.header("Choisissez la variable dont vous voulez représenter la distribution")
+    st.header("2. Distribution des variables")
     option = st.selectbox(
-      '* Choisissez la variable dont vous voulez représenter la distribution', (vars_selected[1:]))
+      'Choisissez la variable dont vous voulez représenter la distribution', (vars_selected[1:]))
 
     st.write("Distribution de ", option)
     numeric(option)
   
     st.write("Valeur pour le client sélectionné = ", donnees_client[option].iloc[0])
 
-    st.write("____________________________________________________________________________________________")
-   
-    
-            
-    relation_entre_variables ("DAYS_BIRTH", "DAYS_EMPLOYED")
+    st.write("-------------------------------------------------------------------------------------------")
+    st.header("3. Relation entre les variables")
+    option1 = st.selectbox(
+      'Choisissez la variable en abscisses', (vars_selected[1:]))
+    st.write("________________________________________")
+     option2 = st.selectbox(
+      'Choisissez la variable en ordonnées', (vars_selected[1:]))
+        
+    relation_entre_variables (option1, option2)
 
     # Importer le modèle
     from joblib import dump, load
