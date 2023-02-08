@@ -31,6 +31,7 @@ def numeric(col):
     plt.axline((donnees_client[col].iloc[0], 0), (donnees_client[col].iloc[0], 0.00005), c='darkorange', ls='dashed')
     st.pyplot(fig)
         
+        
 def relation_entre_variables (var1, var2):
     fig = plt.figure(figsize=(15,5))
     plt.title(var2 +" en fonction de " + var1)
@@ -80,8 +81,7 @@ if __name__=="__main__":
     
 
     option = st.selectbox(
-     'quelle variable?',
-     (vars_selected))
+     'Choisissez la variable dont vous voulez représenter la distribution', (vars_selected[1:]))
 
     st.write('You selected:', option)
     numeric(option)
