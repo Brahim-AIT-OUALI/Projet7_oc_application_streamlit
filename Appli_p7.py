@@ -201,8 +201,8 @@ if __name__=="__main__":
                 exp.as_pyplot_figure()
         
     
-    st.write (" * En orange les facteurs *défavorables* à l'octroi du crédit")
-    st.write (" * En bleu les facteurs *favorables* à l'octroi du crédit")
+    st.write (" * En orange les facteurs  *défavorables*  à l'octroi du crédit")
+    st.write (" * En bleu les facteurs  *favorables*  à l'octroi du crédit")
    
     
 
