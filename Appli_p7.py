@@ -81,9 +81,9 @@ if __name__=="__main__":
     
 
     option = st.selectbox(
-     '# Choisissez la variable dont vous voulez représenter la distribution', (vars_selected[1:]))
+     'Choisissez la variable dont vous voulez représenter la distribution', (vars_selected[1:]))
 
-    st.write('You selected:', option)
+    st.write(option)
     numeric(option)
     numeric("ANNUITY_INCOME_PERC")
     st.write("Valeur pour le client = ", donnees_client["ANNUITY_INCOME_PERC"].iloc[0])
