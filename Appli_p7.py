@@ -127,7 +127,7 @@ if __name__=="__main__":
         
     r = requests.post(url = API_ENDPOINT, json = data)
     prevision = r.text
-    #st.write(prevision)  
+    st.write(prevision)  
     prevision = json.loads(prevision)
         
     #st.write(prevision["reponse"])
