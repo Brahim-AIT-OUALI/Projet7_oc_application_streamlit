@@ -141,8 +141,8 @@ if __name__=="__main__":
     st.write("* #### Client négatif = bon client ")
         
     st.write("##### Les 2 types d'erreurs possibles minimisées par notre modèle: ")
-    st.write("           - FN = faux négatif (mauvais client prédit bon client : donc crédit accordé et perte en capital"))
-    st.write("           - FP = faux positif (bon client prédit mauvais : donc refus crédit et manque à gagner en marge"))
+    st.write("           - FN = faux négatif (mauvais client prédit bon client : donc crédit accordé et perte en capital)")
+    st.write("           - FP = faux positif (bon client prédit mauvais : donc refus crédit et manque à gagner en marge)")
 
     st.write("##### Un seuil S= 0.3783783783783784  a été calculé pour minimiser au maximum la perte en capital des FP :")
         
